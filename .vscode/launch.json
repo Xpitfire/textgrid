@@ -1,0 +1,91 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Generate Grid World Data",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/generate_data.py",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "--add_description"
+            ],
+            "env": {
+                "PYTHONPATH": ".",
+            }
+        },
+        {
+            "name": "Evaluate",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/eval.py",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "--n_runs", "20",
+                "--policy_type", "pretrained",
+                "--grid_sizes", "[(8, 8), (11, 11), (13, 9), (15, 10), (20, 20)]",
+                "--model_id", "models.log",
+                "--trap_prob", "0.0",
+                "--tree_prob", "0.0",
+                "--add_description",
+                "--debug",
+                "--video"
+            ],
+            "env": {
+                "PYTHONPATH": ".",
+            }
+        },
+        {
+            "name": "Manual Game",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/envs/textgrid.py",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "--debug"
+            ],
+            "env": {
+                "PYTHONPATH": ".",
+            }
+        },
+        {
+            "name": "Draw Image",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/draw_img.py",
+            "cwd": "${workspaceFolder}",
+            "args": [
+            ],
+            "env": {
+                "PYTHONPATH": ".",
+            }
+        },
+        {
+            "name": "Train GPT-2",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/train.py",
+            "cwd": "${workspaceFolder}",
+            "args": [
+            ],
+            "env": {
+                "PYTHONPATH": ".",
+            }
+        },
+        {
+            "name": "AtariARI",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/atariari.py",
+            "cwd": "${workspaceFolder}",
+            "args": [
+            ],
+            "env": {
+                "PYTHONPATH": ".",
+            }
+        }
+    ]
+}
